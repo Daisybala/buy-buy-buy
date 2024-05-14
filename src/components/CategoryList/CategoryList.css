@@ -1,0 +1,31 @@
+.CategoryList {
+    list-style-type: none;   /* Removes default list styling */
+    margin: 0;               /* Removes default margin */
+    padding: 0;              /* Removes default padding */
+    overflow: hidden;        /* Prevents float collapse */
+    background-color: #d1bebe;  /* Background color of the sub nav bar */
+    text-align: center;      /* Centers the list items horizontally */
+}
+
+.CategoryList li {
+    display: inline-block;   /* Displays list items in a row */
+    margin-right: 20px;      /* Adds space between the list items */
+}
+
+.CategoryList li:last-child {
+    margin-right: 0;         /* Removes margin from the last item to maintain alignment */
+}
+
+.CategoryList li a {
+    display: block;          /* Makes the link fill the entire list item for easier clicking */
+    padding: 10px 20px;      /* Padding around the text for better button appearance */
+    text-decoration: none;   /* Removes underline from links */
+    color: white;            /* Text color for the items */
+    background-color: #4CAF50; /* Background color of the list items (buttons) */
+    border-radius: 5px;      /* Optional: rounds the corners of the buttons */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.CategoryList li a:hover {
+    background-color: #55a957; /* Slightly different green on hover */
+}

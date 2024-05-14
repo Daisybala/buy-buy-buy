@@ -1,3 +1,4 @@
+const category = require("../../models/category");
 const Item = require("../../models/item");
 
 module.exports = {
@@ -6,7 +7,7 @@ module.exports = {
 }
 
 async function getAll (req, res) {
-  const items = await Item.find({});
+  const items = await Item.find({}).populate('category');
   res.json(items);
 }
 

@@ -1,0 +1,25 @@
+.SaleItemCard {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.SaleItemCard:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.SaleItemCard img {
+    width: 100%; /* Makes the image expand to cover the width of the card */
+    height: auto;
+    border-radius: 8px; /* Rounds the corners of the image */
+}
+
+.price {
+    font-size: 1rem;
+    color: #333;
+    padding: 5px 0;
+    font-weight: bold;
+}

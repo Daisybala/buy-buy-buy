@@ -1,0 +1,19 @@
+.ItemsList {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates 4 columns of equal width */
+    gap: 20px; /* Space between rows and columns */
+    padding: 20px; /* Padding around the grid */
+    box-sizing: border-box;
+}
+
+@media (max-width: 960px) {
+    .ItemsList {
+        grid-template-columns: repeat(2, 1fr); /* Switches to two columns on smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .ItemsList {
+        grid-template-columns: 1fr; /* Switches to one column on very small screens */
+    }
+}

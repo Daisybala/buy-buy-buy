@@ -2,9 +2,11 @@ import { useState, useEffect, useRef } from "react";
 import * as itemsAPI from '../../utilities/items-api';
 import AuthPage from "../AuthPage/AuthPage";
 import ItemsList from "../../components/ItemsList/ItemsList";
+import CategoryList from "../../components/CategoryList/CategoryList";
 export default function HomePage({user, setUser}) {
   const [auth, setAuth] = useState(false); 
   const [saleItems, setSaleItems] = useState([]);
+  const [activeCat, setActiveCat] = useState('');
   const categoriesRef = useRef([]);
 
   // The empty dependency array causes the effect
@@ -14,13 +16,19 @@ export default function HomePage({user, setUser}) {
       const items = await itemsAPI.getAll();
       categoriesRef.current = [...new Set(items.map(item => item.category.name))];
       setSaleItems(items);
+      setActiveCat(categoriesRef.current[0]);
     }
     getItems();
   }, []);
   
     return (
       <>
-        <h1>HomeyPage</h1>
+      <CategoryList
+        categories={categoriesRef.current}
+        activeCat={activeCat}
+        setActiveCat={setActiveCat}
+      />
+        <h1>HomePage</h1>
         {!user&&<button onClick={() => setAuth(!auth)}>Login/Sign Up</button>}
         {
           auth
@@ -30,7 +38,12 @@ export default function HomePage({user, setUser}) {
             </div>
 
         }
-        <ItemsList saleItems={saleItems}/>
+        <ItemsList saleItems={saleItems.filter(item => item.category.name === activeCat)}/>
+        <CategoryList
+          categories={categoriesRef.current}
+          activeCat={activeCat}
+          setActiveCat={setActiveCat}
+        />
       </>
     );
   }
