@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import * as itemsAPI from '../../utilities/items-api';
 import AuthPage from "../AuthPage/AuthPage";
+import ItemsList from "../../components/ItemsList/ItemsList";
 export default function HomePage({user, setUser}) {
   const [auth, setAuth] = useState(false); 
-  const [menuItems, setMenuItems] = useState([]);
+  const [saleItems, setSaleItems] = useState([]);
   const categoriesRef = useRef([]);
 
   // The empty dependency array causes the effect
@@ -11,8 +12,8 @@ export default function HomePage({user, setUser}) {
   useEffect(function() {
     async function getItems() {
       const items = await itemsAPI.getAll();
-      // categoriesRef.current = [...new Set(items.map(item => item.category.name))];
-      setMenuItems(items);
+      categoriesRef.current = [...new Set(items.map(item => item.category.name))];
+      setSaleItems(items);
     }
     getItems();
   }, []);
@@ -29,6 +30,7 @@ export default function HomePage({user, setUser}) {
             </div>
 
         }
+        <ItemsList saleItems={saleItems}/>
       </>
     );
   }
