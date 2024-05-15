@@ -3,6 +3,7 @@ import * as itemsAPI from '../../utilities/items-api';
 import AuthPage from "../AuthPage/AuthPage";
 import ItemsList from "../../components/ItemsList/ItemsList";
 import CategoryList from "../../components/CategoryList/CategoryList";
+import "./HomePage.css";
 export default function HomePage({user, setUser}) {
   const [auth, setAuth] = useState(false); 
   const [saleItems, setSaleItems] = useState([]);
@@ -23,27 +24,24 @@ export default function HomePage({user, setUser}) {
   
     return (
       <>
-      <CategoryList
-        categories={categoriesRef.current}
-        activeCat={activeCat}
-        setActiveCat={setActiveCat}
-      />
-        <h1>HomePage</h1>
-        {!user&&<button onClick={() => setAuth(!auth)}>Login/Sign Up</button>}
+        <div className="nav-bar">
+          <CategoryList
+            categories={categoriesRef.current}
+            activeCat={activeCat}
+            setActiveCat={setActiveCat}
+          />
+          {/* <h1>HomePage</h1> */}
+          {!user&&<button className="login-signup-btn" onClick={() => setAuth(!auth)}>Login/Sign Up</button>}
+        </div>
         {
           auth
             ? <AuthPage setAuth={setAuth} user={user} setUser={setUser} />
             : <div>
               <p>Welcome</p>
             </div>
-
         }
+
         <ItemsList saleItems={saleItems.filter(item => item.category.name === activeCat)}/>
-        <CategoryList
-          categories={categoriesRef.current}
-          activeCat={activeCat}
-          setActiveCat={setActiveCat}
-        />
       </>
     );
   }

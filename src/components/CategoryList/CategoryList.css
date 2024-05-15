@@ -3,7 +3,7 @@
     margin: 0;               /* Removes default margin */
     padding: 0;              /* Removes default padding */
     overflow: hidden;        /* Prevents float collapse */
-    background-color: #d1bebe;  /* Background color of the sub nav bar */
+    background-color: none;  /* Background color of the sub nav bar */
     text-align: center;      /* Centers the list items horizontally */
 }
 

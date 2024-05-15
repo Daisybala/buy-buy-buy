@@ -6,7 +6,7 @@ export default function ItemsList({saleItems}) {
     ));
     return(
         <>
-            <h1>ItemsList</h1>
+            {/* <h1>ItemsList</h1> */}
             <div className="ItemsList">{saleItemCards}</div>
         </>
     );
