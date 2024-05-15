@@ -2,7 +2,7 @@ const category = require("../../models/category");
 const Item = require("../../models/item");
 
 module.exports = {
-  getAll
+  getAll,
   // create
 }
 
@@ -11,6 +11,10 @@ async function getAll (req, res) {
   res.json(items);
 }
 
+// async function show (req, res) {
+//   const item = await Item.findById(req.params.id);
+//   res.json(item);
+// }
 // async function create (req, res) {
 //   const item = await Item.create(req.body);
 //   res.json(item);

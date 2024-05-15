@@ -32,7 +32,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage user={user} setUser={setUser} activeCat={activeCat} setActiveCat={setActiveCat} saleItems={saleItems} categoriesRef={categoriesRef}/>} />
         <Route path="/posts" element={<PostsPage />} />
-        <Route path='/items/:itemName' element={<ItemDetailPage />} />
+        <Route path="/items/:saleItemId" element={<ItemDetailPage saleItems={saleItems} user={user}/>} />
 
         {/* additional Routes... */}
         {/* <Route path="/*" element={<Navigate to="/" />} /> */}
