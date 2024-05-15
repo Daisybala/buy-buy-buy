@@ -1,10 +1,10 @@
-import { useState, useEffect, useRef } from "react";
-import * as itemsAPI from '../../utilities/items-api';
+import { useState } from "react";
+// import * as itemsAPI from '../../utilities/items-api';
 import AuthPage from "../AuthPage/AuthPage";
 import ItemsList from "../../components/ItemsList/ItemsList";
 import CategoryList from "../../components/CategoryList/CategoryList";
 import "./HomePage.css";
-export default function HomePage({user, setUser, activeCat, setActiveCat, saleItems}) {
+export default function HomePage({user, setUser, activeCat, setActiveCat, saleItems, categoriesRef}) {
   const [auth, setAuth] = useState(false); 
   // const [saleItems, setSaleItems] = useState([]);
   // const [activeCat, setActiveCat] = useState('');
