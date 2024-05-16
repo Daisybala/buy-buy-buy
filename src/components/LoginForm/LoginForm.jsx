@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import * as usersService from '../../utilities/users-service';
+import { useNavigate } from 'react-router-dom';
 
-export default function LoginForm({ setAuth, setUser }) {
+export default function LoginForm({ setUser }) {
   const [credentials, setCredentials] = useState({
     email: '',
     password: ''
   });
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   function handleChange(evt) {
     setCredentials({ ...credentials, [evt.target.name]: evt.target.value });
@@ -22,7 +24,7 @@ export default function LoginForm({ setAuth, setUser }) {
       // payload of the JSON Web Token (JWT)
       const user = await usersService.login(credentials);
       setUser(user);
-      setAuth(false);
+      navigate('/items');
     } catch {
       setError('Log In Failed - Try Again');
     }

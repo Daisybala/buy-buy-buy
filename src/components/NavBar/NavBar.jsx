@@ -9,16 +9,37 @@ export default function NavBar({ user, setUser }) {
   }
 
   return (
-    <>
-    {user &&<nav className="main-nav-bar">
+    <nav className="main-nav-bar">
       <Link to="/">Home</Link>
-      <Link to="/orders">Order History</Link>
-      &nbsp;  &nbsp;
-      <Link to="/posts">Bags</Link>
       &nbsp;&nbsp;
-      <span>Welcome, {user&&user.name}</span>
-      &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
-    </nav>}
-    </>
-  );
+      <Link to="/items">Bags</Link>
+      &nbsp;&nbsp;
+      {user?(
+        <>
+          <Link to="/orders">Order History</Link>
+          &nbsp;&nbsp;
+          <span>Welcome, {user&&user.name}</span>
+          &nbsp;&nbsp;
+          <Link to="" onClick={handleLogOut}>Log Out</Link>
+          &nbsp;&nbsp;
+        </>
+      ) : (
+        <Link to="/Auth">Login/Sign Up</Link>
+      )}
+    </nav>
+  )
 }
+
+      {/* </nav>
+      {
+        user
+          ?<nav className="main-nav-bar">
+          &nbsp;&nbsp;
+          &nbsp;&nbsp;
+          </nav>
+          :
+          <nav className="main-nav-bar">
+          </nav>
+      }
+    </> */}
+  {/* )} */}

@@ -7,7 +7,7 @@ export default function ItemDetailPage({saleItems, user}) {
     return (
         <>
             <h1>ItemDetailPage</h1>
-            <img src={saleItem.imageUrl} />
+            <img src={saleItem.imageUrl} alt=""/>
             <p>{saleItem.name}</p>
             <p>{saleItem.price}</p>
             {user && <button>add to cart</button>}
