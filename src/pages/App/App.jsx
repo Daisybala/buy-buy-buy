@@ -27,6 +27,7 @@ export default function App() {
     }
     getItems();
   }, []);
+  console.log(saleItems);
 
   return (
     <main className="App">
@@ -35,7 +36,7 @@ export default function App() {
         <Route path="/" element={<HomePage user={user} setUser={setUser} />} />
         <Route path="/auth" element={<AuthPage setUser={setUser} />}/>
         <Route path="/items" element={<ItemListPage  user={user} setUser={setUser} activeCat={activeCat} setActiveCat={setActiveCat} saleItems={saleItems} categoriesRef={categoriesRef}/>} />
-        <Route path="/items/:saleItemId" element={<ItemDetailPage saleItems={saleItems} user={user}/>} />
+        <Route path="/items/:saleItemId" element={<ItemDetailPage saleItems={saleItems} user={user} />} />
 
         {/* additional Routes... */}
         {/* <Route path="/*" element={<Navigate to="/" />} /> */}
