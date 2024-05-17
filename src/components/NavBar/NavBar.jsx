@@ -22,6 +22,7 @@ export default function NavBar({ user, setUser }) {
           &nbsp;&nbsp;
           <Link to="" onClick={handleLogOut}>Log Out</Link>
           &nbsp;&nbsp;
+          <Link to="/cart"><ion-icon name="cart-outline"></ion-icon></Link>
         </>
       ) : (
         <Link to="/Auth">Login/Sign Up</Link>

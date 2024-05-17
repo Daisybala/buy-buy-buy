@@ -2,10 +2,10 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import * as ordersAPI from '../../utilities/orders-api';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
-import ItemDetail from '../../components/ItemDtail/ItemDetail';
+import ItemDetail from '../../components/ItemDetail/ItemDetail';
 
 
-export default function ItemDetailPage({saleItems, user}) {
+export default function ItemDetailPage({saleItems, user, handleAddToOrder}) {
     const {saleItemId} = useParams();
     const [cart, setCart] = useState(null);
 
@@ -19,12 +19,7 @@ export default function ItemDetailPage({saleItems, user}) {
     }, []);
     console.log(saleItems);
 
-    async function handleAddToOrder(itemId) {
-        // 1. Call the addItemToCart function in ordersAPI, passing to it the itemId, and assign the resolved promise to a variable named updatedCart.
-        const updatedCart = await ordersAPI.addItemToCart(itemId);
-        // 2. Update the cart state with the updated cart received from the server
-        setCart(updatedCart);
-    }
+
 
 
 
@@ -32,7 +27,7 @@ export default function ItemDetailPage({saleItems, user}) {
     return (
         <>
             <ItemDetail saleItem={saleItem} user={user} handleAddToOrder={handleAddToOrder} />
-            <OrderDetail order={cart}/>
+            {/* <OrderDetail order={cart}/> */}
         </>
     )
 

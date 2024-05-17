@@ -12,3 +12,16 @@ export function addItemToCart(itemId) {
   // Just send itemId for best security (no pricing)
   return sendRequest(`${BASE_URL}/cart/items/${itemId}`, 'POST');
 }
+
+export function setItemQTY(itemId, newQTY) {
+  return sendRequest(`${BASE_URL}/cart/qty`, 'PUT', {itemId, newQTY});
+
+}
+
+export function checkOut() {
+  return sendRequest(`${BASE_URL}/cart/checkout`, 'POST');
+}
+
+export function getAll() {
+  return sendRequest(BASE_URL);
+}
