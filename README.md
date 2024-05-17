@@ -9,9 +9,9 @@ Welcome to Buy Buy Buy, a cross-border e-commerce website focused on selling U.S
 - [Getting Started](#getting-started)
 - [Next Steps](#next-steps)
 ## Screenshots
-<img src="images/homepage.png">
-<img src="images/ItemListPage.png">
-<img src="images/ItemListPageSmall.png">
+<img src="/public/images/homepage.png">
+<img src="/public/images/ItemListPage.png">
+<img src="/public/images/ItemListPageSmall.png">
 
 ## Features
 - Browse and purchase a variety of U.S. products.
