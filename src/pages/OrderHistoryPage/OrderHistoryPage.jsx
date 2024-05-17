@@ -1,6 +1,7 @@
 import { useState, useEffect} from "react";
 import OrderListItem from "../../components/OrderListItem/OrderListItem";
 import *as ordersApi from "../../utilities/orders-api";
+import './OrderHistoryPage.css';
 
 export default function OrderHistoryPage() {
   const [orders, setOrders] = useState([]);

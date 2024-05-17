@@ -1,0 +1,31 @@
+.OrderListItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .OrderListItem:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .OrderListItem.selected {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+  }
+  
+  .OrderListItem .smaller {
+    font-size: 0.875rem;
+    color: #555;
+  }
+  
+  .OrderListItem .align-rt {
+    text-align: right;
+  }

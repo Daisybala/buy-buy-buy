@@ -22,7 +22,7 @@ export default function NavBar({ user, setUser }) {
           &nbsp;&nbsp;
           <Link to="" onClick={handleLogOut}>Log Out</Link>
           &nbsp;&nbsp;
-          <Link to="/cart"><ion-icon name="cart-outline"></ion-icon></Link>
+          <Link to="/cart" className="cart-icon"><ion-icon name="cart-outline"></ion-icon></Link>
         </>
       ) : (
         <Link to="/Auth">Login/Sign Up</Link>
@@ -30,17 +30,3 @@ export default function NavBar({ user, setUser }) {
     </nav>
   )
 }
-
-      {/* </nav>
-      {
-        user
-          ?<nav className="main-nav-bar">
-          &nbsp;&nbsp;
-          &nbsp;&nbsp;
-          </nav>
-          :
-          <nav className="main-nav-bar">
-          </nav>
-      }
-    </> */}
-  {/* )} */}

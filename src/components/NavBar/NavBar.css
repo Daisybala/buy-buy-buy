@@ -1,6 +1,8 @@
 .main-nav-bar {
     background-color: white; /* Dark background for the main-navbar */
-    color: black; /* White text color */
+    color: rgb(59, 57, 57); /* White text color */
+    font-weight: bold;
+    font-size: large;
     padding: 40px 20px; /* Padding for some breathing room */
     display: flex; /* Align items in a row */
     align-items: center; /* Center items vertically */
@@ -8,7 +10,7 @@
 }
 
 .main-nav-bar a {
-    color: #000; /* Ensures links are also white */
+    color: #312f2f; /* Ensures links are also white */
     text-decoration: none; /* No underline for links */
     margin: 0 10px; /* Margin on the sides of each link */
 }
@@ -34,3 +36,8 @@
 .logout-button:hover {
     color: #E57373; /* Light red color for hover effect */
 }
+
+.cart-icon {
+    font-size: 1.5rem;
+    margin-left: 10px;
+  }

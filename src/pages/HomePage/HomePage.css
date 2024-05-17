@@ -1,0 +1,43 @@
+.HomePage {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXRvm0_jdYoOVLoKGag_cxuLj8FcGuhV10Wg&s');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .main-img {
+    flex: 0 0 30%; /* 60% of the height */
+  }
+  
+  .main-img img {
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+  }
+  
+  .img-group {
+    display: flex;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXRvm0_jdYoOVLoKGag_cxuLj8FcGuhV10Wg&s');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex: 0 0 50%; /* 30% of the height */
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .img-group img {
+    height: 80%; /* Adjust this to fit within the 30% height */
+    max-height: 100%; /* Ensure the images do not overflow their container */
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+  }
+  
+  .img-group img:hover {
+    transform: scale(1.05);
+  }
